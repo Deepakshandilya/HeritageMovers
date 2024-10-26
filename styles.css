@@ -1,0 +1,221 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    z-index: 100;
+}
+
+.navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo img {
+    height: 60px;
+    width: auto;
+    max-width: 160px;
+    margin-bottom: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    background: url('images/dummy-truck.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 300px; /* To account for the left-side navbar */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.landing-content h1 {
+    font-size: 4rem;
+    color: red;
+    animation: slideIn 1.5s ease-in-out;
+    margin: 0;
+}
+
+.landing-content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+    color: black;
+}
+
+.cta-button {
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: black;
+}
+
+/* Photo Animation */
+@keyframes photoSlideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.landing img {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    animation: photoSlideIn 1.5s ease-in-out;
+}
+
+/* Section Styles */
+.about-section, 
+.services-section, 
+.testimonials-section {
+    padding: 80px 10%;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.about-section h2, 
+.services-section h2, 
+.testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.testimonials-section blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f8f8f8;
+    padding: 80px 10%;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+#contact-form input, 
+#contact-form textarea {
+    width: 80%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: black;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        width: 200px;
+    }
+
+    .landing-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .landing-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #contact-form input, 
+    #contact-form textarea {
+        width: 95%;
+    }
+}
